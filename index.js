@@ -78,7 +78,9 @@ async function extensionMain() {
     const ready = await waitForHost(HOST_WAIT_TIMEOUT_MS);
     if (!ready) return;
 
-    // 设置 UI 无论开关状态都注入（允许用户在扩展设置里重新启用）
+    // 设置 UI 与样式无论开关状态都注入：
+    // 样式必须先于 enabled 判断——禁用状态下设置面板同样需要正常排版
+    injectStyles();
     const settingsRoot = initSettingsUI();
     if (settingsRoot) {
         settingsRoot.__stppOnTest = makeTestHandler(settingsRoot);
@@ -91,7 +93,6 @@ async function extensionMain() {
         return;
     }
 
-    injectStyles();
     initPanel();
 
     // 设置变更即时生效（面板入口显隐等由 panel 内部订阅）
