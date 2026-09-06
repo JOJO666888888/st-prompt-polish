@@ -1,0 +1,12 @@
+{
+    "display_name": "提示词润色",
+    "loading_order": 20,
+    "requires": [],
+    "optional": [],
+    "js": "index.js",
+    "css": "",
+    "author": "duhao",
+    "version": "1.0.0",
+    "homePage": "",
+    "auto_update": false
+}

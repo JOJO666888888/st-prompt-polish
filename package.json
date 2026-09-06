@@ -1,0 +1,7 @@
+{
+    "name": "st-prompt-polish",
+    "version": "1.0.0",
+    "description": "SillyTavern 提示词润色插件：发送前调用「提示词工程专家」润色/补全/扩写提示词草稿",
+    "type": "module",
+    "private": true
+}
